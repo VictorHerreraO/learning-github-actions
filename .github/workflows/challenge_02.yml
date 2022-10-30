@@ -6,24 +6,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print date
-      - run: date
+        run: date
   job2:
     name: Windows Job
     runs-on: windows-latest
     steps:
       - name: Print date
-      - run: Get-Date
+        run: Get-Date
   job3:
     name: Macos Job
     runs-on: macos-latest
     steps:
       - name: Print date
-      - run: date
+        run: date
   job4:
     name: Depending Job
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
     steps:
       - name: Print date
-      - run: date
+        run: date
     
