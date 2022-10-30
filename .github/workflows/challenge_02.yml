@@ -4,18 +4,26 @@ jobs:
   job1:
     name: Ubuntu Job
     runs-on: ubuntu-latest
-    run: date
+    steps:
+      - name: Print date
+      - run: date
   job2:
     name: Windows Job
     runs-on: windows-latest
-    run: Get-Date
+    steps:
+      - name: Print date
+      - run: Get-Date
   job3:
     name: Macos Job
     runs-on: macos-latest
-    run: date
+    steps:
+      - name: Print date
+      - run: date
   job4:
     name: Depending Job
     runs-on: ubuntu-latest
     needs: [job1, job2, job3]
-    run: date
+    steps:
+      - name: Print date
+      - run: date
     
