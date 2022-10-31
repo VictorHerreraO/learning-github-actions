@@ -1,0 +1,15 @@
+name: Challenge 03
+
+on: push
+
+jobs:
+  job1:
+    name: Job 1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ env.GITHUB_REF_NAME }}
