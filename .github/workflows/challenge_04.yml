@@ -1,0 +1,21 @@
+name: Challenge 04
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: python hello.py
+
+  build:
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Checkout
+        run: actions/checkout@v2
+      - name: Artifact
+        run: actions/upload-artifact@v3
+        with:
+          path: .
