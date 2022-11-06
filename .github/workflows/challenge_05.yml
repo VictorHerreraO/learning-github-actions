@@ -1,0 +1,8 @@
+name: Challenge 05
+on: [push]
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: VictorHerreraO/my-custom-action@main
